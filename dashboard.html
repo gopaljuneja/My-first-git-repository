@@ -1,0 +1,484 @@
+<!doctype html>
+<html lang="en">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+      <!-- Set viewport to device default -->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+      <title>Dashboard | Myntra</title>
+      <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+      <link rel="stylesheet" type="text/css" href="css/style.css">     
+      <!-- Latest compiled and minified JavaScript -->
+      <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+      <script src="js/jquery-ui.js"></script>
+      <script src="js/script.js"></script>
+      <script src="http://code.highcharts.com/highcharts.js"></script>
+
+      <!-- Include our datepicker javascript file. -->
+      <script type="text/javascript" src="js/datepicker.js"></script>     
+      <script type="text/javascript" src="js/DateRangesWidget.js"></script>     
+      <link rel="stylesheet" href="css/datepicker.css" />       
+        <!-- Create the date pickers. -->
+        <script type="text/javascript">
+            $(document).ready(function() {
+               
+            $('.pickerContainer.widget').DateRangesWidget();
+                //prettyPrint();
+            });
+        </script>
+   </head>
+   <body>
+      <div class="header">
+         <div class="wrapper">
+            <div class="logo"><a href="#"><img src="images/logo-mini.png"> </a> <span>Data Democracy Portal</span></div>
+            <div class="menu">
+               <ul>
+                  <li><a href="#" class="active">Dashboard</a></li>
+                  <li><a href="#">Ad Hoc Query</a></li>
+               </ul>
+            </div>
+            <div class="user">
+               <span class="user-img"><img src="images/user.png" alt=""></span>
+               <a href="#" class="arrow user-arrow">Mahesh Bhat</a>
+               <div class="user-option">
+                  <ul>
+                     <li><a href="#">Settings</a></li>
+                     <li><a href="#">Help</a></li>
+                     <li><a href="login.html">Logout</a></li>
+                  </ul>
+               </div>
+            </div>
+         </div>
+         <a href="#" class="sidebar-open"><img src="images/menu.png"></a>
+      </div>
+      <!--/header end-->
+      <div class="content wrapper clearfix">
+         <div class="sidebar">
+            <a href="#" class="slide-link"></a>
+            <div class="group sideSearch"> 
+               <span class="icon-search"></span>     
+               <input type="text" required>
+               <span class="highlight"></span>
+               <span class="bar"></span>
+               <label>Search Reports..</label>
+            </div>
+            <div class="sidetop"><a href="#" class="btn1"><span class="plus">+</span> New Dashboard</a></div>
+            <!-- Jquery UI Component  -->
+            <div id="create-dialog" title="Create Dashboard">
+               <div class="create-dialog-area">
+                  <div class="fields-area">
+                     <div class="group">      
+                        <input type="text" required>
+                        <span class="highlight"></span>
+                        <span class="bar"></span>
+                        <label>Name</label>
+                     </div>
+                  </div>
+                  <div class="widget-section">
+                     <ul>
+                        <li>
+                           <a href="#"><span class="blank"></span>Use Blank</a>
+                        </li>
+                        <li class="fr">
+                           <a href="#"><span></span>Use Template</a>
+                        </li>
+                     </ul>
+                  </div>
+                  <div class="rdobtns">
+                     <label class="radio">
+                     <input id="radio1" type="radio" name="radios3" checked>
+                     <span class="outer"><span class="inner"></span></span>Public</label>
+                     <label class="radio">
+                     <input id="radio2" type="radio" name="radios3">
+                     <span class="outer"><span class="inner"></span></span>Private</label>
+                  </div>
+                  <div class="dialog-footer">
+                     <button class="cancel cancel-create-popup" type="button">Cancel</button>
+                     <button class="create create-dashboard-btn" type="submit">Create</button>
+                  </div>
+               </div>
+            </div>
+            <ul class="nav">
+               <li>
+                  <a href="#">Favorites</a>
+                  <ul>
+                     <li><a href="#">Diwali Sale </a></li>
+                     <li><a href="#">Discount on mobiles</a></li>
+                     <li><a href="#">New Users</a></li>
+                     <li><a href="#">Sales 2015</a></li>
+                  </ul>
+               </li>
+               <li>
+                  <a href="#">My Dashboard</a>
+                  <ul>
+                     <li><a href="#">Personal</a></li>
+                  </ul>
+               </li>
+               <li class="open-nav">
+                  <a href="#" class="down">All Dashboard</a>
+                  <ul>
+                     <li><a href="#">Gross Revenue Order </a> <sup class="new">New</sup></li>
+                     <li><a href="#" class="active">Christmas Compaign </a></li>
+                     <li><a href="#">Wedding Store</a></li>
+                     <li><a href="#">Annual Review  </a></li>
+                     <li><a href="#">Diwali Sale</a></li>
+                     <li><a href="#">New Users</a></li>
+                     <li><a href="#">Sales 2014</a></li>
+                  </ul>
+               </li>
+            </ul>
+            <div class="bshadow"></div>
+         </div>
+         <!--/sidenar end-->
+         <div class="main">
+            <!-- Dashboard Section -->
+            <div class="content-section">
+               <div class="heading-sec">
+                  <div class="dash-action"><a href="#" class="icon icon-fav" title="favorite"></a> <a href="#" class="icon icon-edit ml15 edit-dash" title="Edit"></a> <a href="#" class="icon icon-delete ml15" title="Delete"></a></div>
+                  <h1>Christmas Compaign</h1>
+                  <a href="#" class="icon icon-share mr22" title="Share"></a>
+                  <a href="#" class="icon icon-msg mr22" title="Messages"></a>
+                  <a href="#" class="icon icon-pdf" title="PDF"></a>
+               </div>
+               <div class="content-top">
+                  <a href="#" class="btn2 add-widget"><span class="plus">+</span> Add Widgets</a>
+                  <!--widget dialog-->
+                  <div id="widget-dialog" title="Add Widgets">
+                     <div class="create-dialog-area">
+                        <div class="fields-area">
+                           <div class="group">      
+                              <input type="text" required>
+                              <span class="highlight"></span>
+                              <span class="bar"></span>
+                              <label>Name</label>
+                           </div>
+                        </div>
+                        <div class="widget-list">
+                           <h3>Widgets</h3>                           
+                           <ul class="chart-list">
+                              <li>
+                                 <a href="#"><img src="images/icon-metrics.png" alt="" /></a>Metric
+                              </li>
+                              <li>
+                                 <a href="#"><img src="images/icon-bar.png" alt="" /></a>Bar
+                              </li>
+                              <li>
+                                 <a href="#"><img src="images/icon-pie.png" alt="" /></a>Pai
+                              </li>
+                              <li>
+                                 <a href="#"><img src="images/icon-line.png" alt="" /></a>Line
+                              </li>
+                              <li>
+                                 <a href="#"><img src="images/icon-table.png" alt="" /></a>Table
+                              </li>
+                           </ul>
+                           <div class="widget-data">
+                              <div class="widget-filter">
+                                 <div class="form-group">
+                                    <label>Metrics</label>
+                                    <select class="form-control">
+                                       <option>Browsers</option>
+                                       <option>2</option>
+                                       <option>3</option>
+                                    </select>
+                                 </div>
+                                 <div class="form-group">
+                                    <label>Dimensions</label>
+                                    <select class="form-control">
+                                       <option>Select</option>
+                                       <option>2</option>
+                                       <option>3</option>
+                                    </select>
+                                 </div>
+                                 <div class="filter-add">                                 
+                                 </div>
+                                 <a href="#" class="btnfilter"><span class="icon-plus"></span> Filter</a>
+
+                              </div>
+                             
+                           </div>
+                        </div>
+                        <div class="dialog-footer">
+                           <button class="cancel cancel-add-popup" type="button">Cancel</button>
+                           <button class="create add-widget-btn" type="submit">Add</button>
+                        </div>
+                     </div>
+                  </div>
+                  <!--div class="date-filter fr">
+                     <div class="date-select">
+                        <span class="date1"> </span> - <span class="date2"></span> <a href="#" class="darrow"></a>
+                        <div class="compare-date">Compare to: <span class="date3"> </span> - <span class="date4"></span></div>
+                     </div>
+                     <div class="date-panel">
+                        <div>
+                           <label class="lable1">Date Range:</label>   
+                           <select>
+                              <option>Custom</option>
+                              <option>Today</option>
+                              <option>yesterday</option>
+                              <option>This week</option>
+                              <option>This month</option>
+                           </select>
+                        </div>
+                        <div>    
+                           <label class="lable1">From: </label> <input type="text" id="from" name="from" class="f1">               
+                           <label>&nbsp;&nbsp;To:</label> <input type="text" id="to" name="to" class="to1">
+                        </div>
+                        <div class="compare-sec">
+            <div class="checkbox">
+                  <label>
+                    <input type="checkbox" class="dateCompareCheck"><span class="checkbox-material"><span class="check"></span></span>
+                    <span class="lbl">Compare to:</span>
+                  </label>
+                </div>
+                          
+                           <select disabled="disabled" class="compare-sel">
+                              
+                              <option>yesterday</option>
+                              <option>precious week</option>
+                              <option>Last month</option>
+                           </select>
+                        </div>
+                        <div class="compare-dateText">
+                           <label class="lable1">From: </label><input type="text" id="compare-from" name="from" class="f1">             
+                           <label>&nbsp;&nbsp;To:</label> <input type="text" id="compare-to" name="to" class="to1">
+                        </div>
+                        <div class="btns"><input type="submit" value="Save" class="btn2 fr"> <button type="button" class="cncl-btn">Cancel</button>  </div>
+                     </div>
+                  </div-->
+                  <!--/filter end-->
+                  <div class="date-filter fr">
+                  <div class="pickerContainer widget"></div>
+                  </div>
+               </div>
+               <!--/content-top end-->
+               <div class="column-wrap column-full">
+                  <div id="sortable">
+                     <div class="dashboard-widget">
+                        <div class=" box2">
+                           <div class="widget-action"><a class="icon icon-csv" title="Edit" href="#"></a><a class="icon icon-edit" title="Edit" href="#"></a><a class="icon icon-delete widget-delete" title="Delete" href="#"></a></div>
+                           <h2>All Sessions</h2>
+                           <div class="widget-content" id="chart1">
+                              <img src="images/chart1.jpg" alt="">
+                           </div>
+                        </div>
+                     </div>
+                     <div class="dashboard-widget">
+                        <div class=" box2">
+                           <div class="widget-action"><a class="icon icon-csv" title="Edit" href="#"><a class="icon icon-edit" title="Edit" href="#"></a><a class="icon icon-delete widget-delete" title="Delete" href="#"></a></div>
+                           <h2>New Users</h2>                           
+                           <div class="widget-content" id="chart2">
+                              
+                           </div>
+                        </div>
+                     </div>
+                     <div class="dashboard-widget">
+                        <div class=" box2">
+                           <div class="widget-action"><a class="icon icon-csv" title="Edit" href="#"><a class="icon icon-edit" title="Edit" href="#"></a><a class="icon icon-delete widget-delete" title="Delete" href="#"></a></div>
+                           <h2>Sessions by Browsers</h2>
+                           <div class="widget-content">
+                              <table width="100%" class="browser-table" colpadding="0" colspacing="0">
+                                 <tbody>
+                                    <tr>
+                                       <th>Browsers</th>
+                                       <th> Sessions  </th>
+                                       <th>New Users</th>
+                                    </tr>
+                                    <tr>
+                                       <td colspan="3"><span>Chrome</span></td>
+                                    </tr>
+                                    <tr>
+                                       <td>Men Apparels</td>
+                                       <td>45009</td>
+                                       <td>35009</td>
+                                    </tr>
+                                    <tr>
+                                       <td>Women Apparels</td>
+                                       <td>45009</td>
+                                       <td>35009</td>
+                                    </tr>
+                                    <tr>
+                                       <td colspan="3"><span>Firefox</span></td>
+                                    </tr>
+                                    <tr>
+                                       <td>Men Apparels</td>
+                                       <td>45009</td>
+                                       <td>35009</td>
+                                    </tr>
+                                    <tr>
+                                       <td>Women Apparels</td>
+                                       <td>45009</td>
+                                       <td>35009</td>
+                                       <td>
+                                       </td>
+                                    </tr>
+                                 </tbody>
+                              </table>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="dashboard-widget">
+                        <div class=" box2">
+                           <div class="widget-action"><a class="icon icon-csv" title="Edit" href="#"><a class="icon icon-edit" title="Edit" href="#"></a><a class="icon icon-delete widget-delete" title="Delete" href="#"></a></div>
+                           <h2>Users by Browsers</h2>
+                           <ul class="update-period clearfix">
+                              <li><a href="#">Hourly</a></li>
+                              <li><a href="#">Daily</a></li>
+                              <li><a href="#" class="selected">Weekly</a></li>
+                              <li><a href="#">Monthly</a></li>
+                           </ul>
+                           <div class="widget-content" id="chart3">
+                              <img src="images/chart3.jpg" alt="">
+                           </div>
+                        </div>
+                     </div>
+                     <div class="clear"></div>
+                  </div>
+               </div>
+            </div>
+            <!--/content-section end-->
+         </div>
+         <!--/main end-->
+      </div>
+      <div class="footer">2015 Myntra - <a href="#">Terms of Service</a>   <span>|</span>  <a href="#">Privacy Policy</a>  <span>|</span>  <a href="#">Help</a></div>
+      <!-- Jquery UI Component popup  -->
+      <div id="create-dashboard" title="Create Dashboard">
+
+         <div class="create-dialog-area">
+         <div class="fields-area clearfix">
+                     <div class="group">      
+                        <input type="text" required>
+                        <span class="highlight"></span>
+                        <span class="bar"></span>
+                        <label>Name</label>
+                     </div>
+                  </div>
+            <ul class="layout-list">
+               <li>
+                  <table class="table1" border="1" cellspacing="0" cellpadding="0">
+                     <tr>
+                        <td></td>
+                     </tr>
+                  </table>
+               </li>
+               <li class="selected">
+                  <table class="table2" border="1" cellspacing="0" cellpadding="0">
+                     <tr>
+                        <td></td>
+                        <td></td>
+                     </tr>
+                  </table>
+               </li>
+               <li>
+                  <table class="table3" border="1" cellspacing="0" cellpadding="0">
+                     <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                     </tr>
+                  </table>
+               </li>
+               <li>
+                  <table class="table4" border="1" cellspacing="5" cellpadding="5">
+                     <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                     </tr>
+                  </table>
+               </li>
+            </ul>
+            <div class="rdobtns">
+               <label class="radio">
+               <input id="radio1" type="radio" name="radios" checked>
+               <span class="outer"><span class="inner"></span></span>Public</label>
+               <label class="radio">
+               <input id="radio2" type="radio" name="radios">
+               <span class="outer"><span class="inner"></span></span>Private</label>
+            </div>
+            <div class="dialog-footer">
+               <button class="cancel cancel-edit-popup" type="button">Cancel</button>
+               <button class="create done-layout" type="submit">Done</button>
+            </div>
+         </div>
+      </div>
+      <div id="share-dashboard" title="Share Dashboard">
+         <div class="create-dialog-area">
+            <div class="rdobtns">
+               <label class="radio">
+               <input id="radio1" type="radio" name="radios" checked>
+               <span class="outer"><span class="inner"></span></span>People</label>
+            </div>
+            <div class="fields-area">
+               <div class="group">      
+                  <input type="text" required>
+                  <span class="highlight"></span>
+                  <span class="bar"></span>
+                  <label>Enter Name, Enter Email</label>
+               </div>
+            </div>
+            <div class="rdobtns">
+               <label class="radio">
+               <input id="radio2" type="radio" name="radios">
+               <span class="outer"><span class="inner"></span></span>All</label>
+            </div>
+            <div class="dialog-footer">
+               <button class="cancel cancel-share-popup" type="button">Cancel</button>
+               <button class="create" type="submit">Create</button>
+            </div>
+         </div>
+      </div>
+      <div id="edit-dashboard" title="Edit Dashboard">
+         <div class="create-dialog-area">
+            <ul class="layout-list">
+               <li>
+                  <table class="table1" border="1" cellspacing="0" cellpadding="0">
+                     <tr>
+                        <td></td>
+                     </tr>
+                  </table>
+               </li>
+               <li class="selected">
+                  <table class="table2" border="1" cellspacing="0" cellpadding="0">
+                     <tr>
+                        <td></td>
+                        <td></td>
+                     </tr>
+                  </table>
+               </li>
+               <li>
+                  <table class="table3" border="1" cellspacing="0" cellpadding="0">
+                     <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                     </tr>
+                  </table>
+               </li>
+               <li>
+                  <table class="table4" border="1" cellspacing="5" cellpadding="5">
+                     <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                     </tr>
+                  </table>
+               </li>
+            </ul>
+            <div class="rdobtns">
+               <label class="radio">
+               <input id="radio1" type="radio" name="radios" checked>
+               <span class="outer"><span class="inner"></span></span>Public</label>
+               <label class="radio">
+               <input id="radio2" type="radio" name="radios">
+               <span class="outer"><span class="inner"></span></span>Private</label>
+            </div>
+            <div class="dialog-footer">
+               <button class="cancel cancel-edit-popup" type="button">Cancel</button>
+               <button class="create done-layout" type="submit">Done</button>
+            </div>
+         </div>
+      </div>
+   </body>
+</html>

@@ -1,0 +1,357 @@
+
+/*=================date calendar css===============*/
+div.datepicker {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  cursor: default;
+  display: none;
+}
+.datepickerContainer {
+  
+}
+
+/* Hide border divs by default */
+.datepickerBorderT,
+.datepickerBorderB,
+.datepickerBorderL,
+.datepickerBorderR,
+.datepickerBorderTL,
+.datepickerBorderTR,
+.datepickerBorderBL,
+.datepickerBorderBR {
+  display:none;
+}
+
+.datepickerHidden {
+  display: none;
+}
+div.datepicker table {
+  border-collapse:collapse;
+}
+div.datepicker a {
+  color: black;
+  text-decoration: none;
+  cursor: default;
+  outline: none;
+}
+div.datepicker table td {
+  text-align: center;
+  padding: 0;
+  margin: 0;
+}
+div.datepicker th {
+  text-align: center;
+  color: #666666;
+  font-weight: normal;
+  padding:0;
+}
+div.datepicker tbody a {
+  display: block;
+}
+.datepickerDays a {
+  width: 20px;
+  line-height: 16px;
+  height: 16px;
+  padding-right: 2px;
+}
+.datepickerYears a,
+.datepickerMonths a{
+  width: 39px;
+  line-height: 36px;
+  height: 36px;
+  text-align: center;
+}
+.datepickerMonths td:first-child a,
+.datepickerMonths td:last-child a,
+.datepickerYears td:first-child a,
+.datepickerYears td:last-child a {
+  width:38px;
+}
+td.datepickerNotInMonth a {
+  color: #666666;
+}
+tbody.datepickerDays td.datepickerSelected{
+  background: #136A9F;
+}
+tbody.datepickerDays td.datepickerNotInMonth.datepickerSelected {
+  background: #FFFFFF;
+}
+tbody.datepickerYears td.datepickerSelected,
+tbody.datepickerMonths td.datepickerSelected{
+  background: #17384d;
+}
+div.datepicker td.datepickerSelected a, div.datepicker td.datepickerSelected2 a {
+  color:white;
+}
+tbody.datepickerDays td.datepickerSelected2 {
+  background: #86BE2B;
+}
+tbody.datepickerDays td.datepickerSelected.datepickerSelected2 {
+  background: #00B1AB;
+}
+
+tbody.datepickerDays td.datepickerNotInMonth.datepickerSelected2 {
+  background: #FFF;
+}
+
+tbody.datepickerYears td.datepickerSelected2,
+tbody.datepickerMonths td.datepickerSelected2{
+  background: #174d38;
+}
+div.datepicker td.datepickerSelected a {
+  color:white;
+}
+div.datepicker a:hover,
+div.datepicker a:hover {
+  color: #88c5eb;
+}
+div.datepicker td.datepickerNotInMonth a:hover {
+  color: #999999;
+}
+.datepickerSpace div {
+  width: 20px;
+}
+.datepickerBlock {
+  vertical-align:top;
+}
+a.datepickerGoNext,
+a.datepickerGoPrev,
+a.datepickerMonth {
+  text-align: center;
+  height: 20px;
+  line-height: 20px;
+  float:left;
+}
+a.datepickerGoNext {
+  float:right;
+}
+div.datepicker th a.datepickerGoNext,
+div.datepicker th a.datepickerGoPrev {
+  width: 20px;
+  color: #666666;
+  visibility: hidden;
+}
+div.datepicker th a.datepickerMonth {
+  width:106px;
+  display:block;
+}
+/* Only display the previous/next arrows on the first/last calendars */
+div.datepicker .datepickerFirstView th a.datepickerGoPrev,
+div.datepicker .datepickerLastView th a.datepickerGoNext {
+  visibility: visible
+}
+
+div.datepicker .datepickerFirstView th a.datepickerMonth {
+  margin-left:0;
+}
+/* Day mode calendar body */
+table.datepickerViewDays tbody.datepickerMonths,
+table.datepickerViewDays tbody.datepickerYears {
+  display: none;
+}
+/* Month mode calendar body */
+table.datepickerViewMonths tbody.datepickerDays,
+table.datepickerViewMonths tbody.datepickerYears,
+table.datepickerViewMonths tr.datepickerDoW {
+  display: none;
+}
+/* Year mode calendar body */
+table.datepickerViewYears tbody.datepickerDays,
+table.datepickerViewYears tbody.datepickerMonths,
+table.datepickerViewYears tr.datepickerDoW {
+  display: none;
+}
+td.datepickerDisabled a,
+td.datepickerDisabled.datepickerNotInMonth a{
+  color: #555555;
+}
+td.datepickerDisabled a:hover {
+  color: #333333;
+}
+/* Not used by default, calendar cells can be marked as special if desired (doesn't seem to be totally working) */
+div.datepicker tbody.datepickerDays td.datepickerSpecial a {
+  background: #770000;
+  color:white;
+}
+div.datepicker tbody.datepickerDays td.datepickerSpecial.datepickerSelected a {
+  background: #aa0000;
+}
+
+/* style the 'not in month' day cell away */
+tbody.datepickerDays td.datepickerNotInMonth.datepickerSelected {
+  background-color:transparent;
+}
+div.datepicker td.datepickerNotInMonth a span {
+  display:none;
+}
+div.datepicker td.datepickerNotInMonth a:hover span {
+  display:none;
+}
+div.datepicker tbody.datepickerDays td.datepickerNotInMonth:hover {
+  background-color: transparent;
+}
+
+
+
+/*=================date picker drop down css===============*/
+#datepicker-dropdown {
+	font-size: 12px;
+}
+
+/* Style the calendar custom widget */
+.date-range {
+	position:relative;
+}
+.date-range-field {
+	height: 39px;
+	overflow: hidden;
+	position: relative;
+	cursor:pointer;
+	border: 1px solid #dbe0e2;
+	border-radius: 5px 5px 5px 5px;
+	background-color: white;
+	width: 250px;
+	border-radius: 4px;
+}
+.date-range-field a  {
+	color:#606060;
+	background-color:#efefef;
+	text-align:center;
+	display: block;
+	position: absolute;
+	width: 18px;	
+	top: 0;
+	right: 0;
+	text-decoration: none;
+	padding-top:9px;
+	border-radius: 0 5px 5px 0;
+	border-left: 1px solid #dbe0e2;
+	height: 37px;
+}
+.date-range-field span {
+	font-size: 12px;
+	font-weight: 500;
+	color: #404040;
+	position: relative;
+	top: 0;
+	/*height: 26px;
+	line-height: 26px;
+ */
+	left: 5px;
+	text-align: center;
+}
+
+#datepicker-dropdown {
+	position: absolute;
+	top: 23px;
+	left: 0;
+	overflow: hidden;
+	width: 760px;
+	/*height:300px;*/
+	background-color: #fff;
+	box-shadow: 0 2px 3px 1px rgba(0, 0, 0, 0.14);
+	display:none;
+	padding:10px;
+    z-index: 99;
+}
+
+/* Remove default border from the custom widget since we're adding our own.  TBD: rework the dropdown calendar to use the default borders */
+#datepicker-dropdown div.datepicker {
+	background-color: transparent;
+	border: none;
+	border-radius: 0;
+	padding: 0;
+}
+
+#datepicker-dropdown select { 
+    font-size: 90%;
+    vertical-align: top;
+    padding: 3px;
+    width: 120px;
+    border:1px solid #ccc;
+ }
+ #datepicker-dropdown select option{
+ 	padding: 1px 0 1px 5px;
+ }
+
+#datepicker-dropdown input {
+    width: auto;    
+    font-size: 90%;
+    vertical-align: top;
+}
+#datepicker-dropdown input[type="checkbox"]{
+	vertical-align: middle;
+}
+
+.datepicker-calendar {
+	float: left;
+}
+
+.datepicker-compare-calendar {
+	clear: both;
+	float: left;
+}
+
+/*.date-range-field span.comparison-divider, */
+.date-range-field span.comparison {
+	text-align: left;
+	display: block;
+	color: gray;
+	font-weight: normal;
+	font-size: 80%;
+}
+
+#datepicker-dropdown .right {
+	float:left;
+}
+
+#datepicker-dropdown input[type=text] {
+	width: 120px;
+	padding: 3px;
+	border:#ccc 1px solid;
+}
+
+.datepicker, .date-ranges-form {
+	float: left;
+}
+
+.date-ranges-form {
+    margin-left: 10px;
+    float: right;
+    line-height: 21px;
+}
+.date-ranges-form div{margin-bottom: 10px;}
+
+.dr1.active {
+	border-color: #07C
+}
+.dr2.active {
+	border-color: #86BE2B
+}
+
+#datepicker-dropdown input.daterange-preset-parameter1 {
+    width: 40px;
+    height: 24px;
+    font-size: 90%;
+    vertical-align: top;
+    padding: 0;
+    border:#ccc 1px solid;
+    margin: 0 0 0 5px;
+    padding-left: 3px;
+}
+
+span.aggregation {
+	background: #eee;
+	border: #ccc 1px solid;
+	border-radius: 4px;
+	margin-right: 5px;
+	margin-top: 4px;
+	padding: 2px 3px 0 3px;
+	float: left;
+	height: 20px;
+}
+
+.date-filter .main{
+	margin-left: 0;
+}
+.aggregation-wrap{display: none;}
